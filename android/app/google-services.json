@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540451458269",
+    "project_id": "we-quiz-90e9d",
+    "storage_bucket": "we-quiz-90e9d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540451458269:android:2695ca90123944c1f71f34",
+        "android_client_info": {
+          "package_name": "com.shiva.wequiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXepLVZD74a7lt4bWNAQF1c4dMs8swTfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
