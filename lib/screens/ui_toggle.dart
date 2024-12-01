@@ -105,7 +105,7 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
                     context,
                     label: "Multiplayer Quiz",
                     onPressed: () {
-                      Navigator.pushNamed(context, '/location-quiz');
+                      Navigator.pushNamed(context, '/game-selection');
                       _audioPlayer.stop(); // Stop music when navigating
                     },
                   ),
