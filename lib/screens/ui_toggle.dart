@@ -49,7 +49,6 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
     // Listen to animation status to play bounce sound after animation completes
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        // _playBounceSoundEffect();
         _playMusicEffect(); // Start the looping music after the bounce sound
       }
     });
@@ -126,17 +125,11 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
                   },
                   child: _buildPanelButton(
                     context,
-                    label: "Location-Based Quiz (Upcoming)",
+                    label: "Location-Based Quiz",
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            "Location-Based Quiz is under development!",
-                          ),
-                        ),
-                      );
+                      Navigator.pushNamed(context, '/location-quiz');
+                      _audioPlayer.stop(); // Stop music when navigating
                     },
-                    isUpcoming: true,
                   ),
                 ),
               ],
@@ -148,13 +141,11 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
   }
 
   Widget _buildPanelButton(BuildContext context,
-      {required String label,
-      required VoidCallback onPressed,
-      bool isUpcoming = false}) {
+      {required String label, required VoidCallback onPressed}) {
     return Container(
       height: 100, // Make buttons large
       decoration: BoxDecoration(
-        color: isUpcoming ? Colors.grey.shade300 : Colors.white,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -165,7 +156,7 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
         ],
       ),
       child: ElevatedButton(
-        onPressed: isUpcoming ? null : onPressed,
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -180,7 +171,7 @@ class _QuizModeSelectorState extends State<QuizModeSelector>
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: isUpcoming ? Colors.grey : Colors.black,
+            color: Colors.black,
           ),
         ),
       ),

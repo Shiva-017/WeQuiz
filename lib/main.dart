@@ -5,7 +5,8 @@ import 'package:we_quiz/screens/create_quiz.dart';
 import 'package:we_quiz/screens/game_selection_screen.dart';
 import 'package:we_quiz/screens/leaderboard_screen.dart';
 import 'package:we_quiz/screens/start_quiz.dart';
-import 'package:we_quiz/screens/ui_toggle.dart'; // Import LeaderboardScreen
+import 'package:we_quiz/screens/ui_toggle.dart';
+import 'package:we_quiz/screens/quiz_ready.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
             roomId: ModalRoute.of(context)!.settings.arguments as String),
         '/leaderboard': (context) => LeaderboardScreen(
             roomId: ModalRoute.of(context)!.settings.arguments as String),
+        '/location-quiz': (context) => QuizScreen(),
       },
     );
   }
